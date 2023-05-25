@@ -2,29 +2,30 @@
 #include <stdlib.h>
 #include <time.h>
 
-typedef struct Node{
+typedef struct Node {
     int data;
-    struct Node* left;
-    struct Node* right;
+    struct Node *left;
+    struct Node *right;
 } Node;
 
-Node* insert(Node* Root, int key){
-    if (Root == NULL){
-        Node* newRoot = (Node*)malloc(sizeof(Node));
-        newRoot -> data = key;
-        newRoot ->left = NULL;
+Node *insert(Node *Root, int key) {
+    if (Root == NULL) {
+        Node *newRoot = (Node *) malloc(sizeof(Node));
+        newRoot->data = key;
+        newRoot->left = NULL;
         newRoot->right = NULL;
         return newRoot;
-    }else{
-        if (key >= Root->data ){
+    } else {
+        if (key >= Root->data) {
             Root->right = insert(Root->right, key);
-        }else{
+        } else {
             Root->left = insert(Root->left, key);
         }
         return Root;
     }
 }
-void printTree(Node* Root){
+
+void printTree(Node *Root) {
     if (Root != NULL) {
         printTree(Root->left);
 
@@ -36,14 +37,14 @@ void printTree(Node* Root){
 
 
 int main() {
-    Node* Root = NULL;
+    Node *Root = NULL;
     srand(time(NULL));
     printf("Enter how many elements in the three: ");
-    int n,key;
+    int n, key;
     scanf("%d", &n);
 
-    for (int i = 0; i<n;i++){
-        key = 30 + rand()%30;
+    for (int i = 0; i < n; i++) {
+        key = 30 + rand() % 30;
         Root = insert(Root, key);
     }
     printTree(Root);
