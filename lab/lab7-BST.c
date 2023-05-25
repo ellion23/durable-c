@@ -50,9 +50,7 @@ int main() {
         key = rand() % 1000;
         Root = insert(Root, key);
     }
-    printf("Recursive output: ");
+    printf("Elements: ");
     printTree(Root);
-//    printf("Non-recursive output: ");
-
     return 0;
 }
