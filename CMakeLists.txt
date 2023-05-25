@@ -3,7 +3,7 @@ project(CLionProject C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(CLionProject useful.h practice/p5.c)
+add_executable(CLionProject practice/p4.c)
 target_link_libraries(CLionProject m)
 add_custom_command(TARGET CLionProject PRE_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy
