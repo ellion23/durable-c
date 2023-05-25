@@ -41,12 +41,18 @@ int main() {
     srand(time(NULL));
     printf("Enter how many elements in the tree: ");
     int n, key;
-    scanf("%d", &n);
+    int check = scanf("%d", &n);
+    if (check != 1) {
+        printf("Incorrect input\n");
+    }
 
     for (int i = 0; i < n; i++) {
-        key = 30 + rand() % 30;
+        key = rand() % 1000;
         Root = insert(Root, key);
     }
+    printf("Recursive output: ");
     printTree(Root);
+//    printf("Non-recursive output: ");
+
     return 0;
 }
