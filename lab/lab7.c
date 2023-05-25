@@ -39,7 +39,7 @@ void printTree(Node *Root) {
 int main() {
     Node *Root = NULL;
     srand(time(NULL));
-    printf("Enter how many elements in the three: ");
+    printf("Enter how many elements in the tree: ");
     int n, key;
     scanf("%d", &n);
 
