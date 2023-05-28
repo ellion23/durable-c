@@ -1,6 +1,3 @@
-#ifndef CLIONPROJECT_USEFUL_H
-#define CLIONPROJECT_USEFUL_H
-
 
 // example of function call: swap(&x, &y);
 void swap(int *a, int *b) {
