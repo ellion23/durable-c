@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 
 // example of function call: swap(&x, &y);
 void swap(int *a, int *b) {
@@ -39,5 +41,3 @@ void fill_array(int array[], const int n) {
     }
 }
 
-
-#endif //CLIONPROJECT_USEFUL_H
