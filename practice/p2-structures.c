@@ -21,26 +21,25 @@ typedef struct  {
 } export_data;
 
 
-void read_file(FILE* file, int count, export_data* data) {
+void read_file(FILE* file, export_data* data) {
     int i = 0;
-    while (feof(file)) {
-
+    while (!feof(file)) {
+        fscanf(file, "%s %s %d", data[i].country, data[i].name, &data[i].export_volume);
+        printf("%s %s %d \n", data[i].country, data[i].name, data->export_volume);
     }
-
 }
 
 
 int main() {
     char* filename = "p2.txt";
-    int count = 22;
     FILE* file = fopen(filename, "r");
     if (file == NULL) {
         printf("Ошибка открытия файла.\n");
         return 1;
     }
 
-    struct export_data data[20];
-
+    export_data data[20];
+    read_file(file, data);
 
     return 0;
 }
