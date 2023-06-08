@@ -37,7 +37,7 @@ double method_kasatelnih(double x0, double epsilon, int equation) {
         iter++;
     }
 
-        printf("Корень: %.5lf, найденный за %d итераций", x, iter);
+    printf("Корень: %.5lf, найденный за %d итераций", x, iter);
 
 
     return x;
