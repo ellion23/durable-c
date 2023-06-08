@@ -50,6 +50,7 @@ int main() {
         value = rand() % 1000;
         Root = insert(Root, value);
     }
+
     printf("Элементы: ");
     printTree(Root);
     return 0;
