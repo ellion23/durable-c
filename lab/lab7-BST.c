@@ -39,18 +39,18 @@ void printTree(Node *Root) {
 int main() {
     Node *Root = NULL;
     srand(time(NULL));
-    printf("Enter how many elements in the tree: ");
+    printf("Введите количество элементов в дереве: ");
     int n, value;
     int check = scanf("%d", &n);
     if (check != 1) {
-        printf("Incorrect input\n");
+        printf("Неверный ввод\n");
     }
 
     for (int i = 0; i < n; i++) {
         value = rand() % 1000;
         Root = insert(Root, value);
     }
-    printf("Elements: ");
+    printf("Элементы: ");
     printTree(Root);
     return 0;
 }

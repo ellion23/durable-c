@@ -17,8 +17,7 @@ void swap(int *a, int *b) // example of function call: swap(&x, &y);
 //}
 
 
-int main()
-{
+int main() {
 //    printf("%d\n", test_func());
 
     return 0;
