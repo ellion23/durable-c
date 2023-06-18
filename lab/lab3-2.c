@@ -12,19 +12,27 @@ void swap(int *a, int *b) // example of function call: swap(&x, &y);
 }
 
 
-void selection_sort(int *array, const int n, int *count) // array you want to be sorted; its length
-{
-    int min_value_index, i, j;
-    for (i = 0; i < n; i++) {
-        min_value_index = i;
-        for (j = i + 1; j < n; j++) {
-            if (array[j] < array[min_value_index]) {
-                min_value_index = j;
-            }
-            (*count)++;
+void insertion_sort(int array[], int n, int *count) {
+    int element, index, i;
+    index = 0;
+    for (i = 1; i < n; i++) {
+        if (array[i] < array[index]) {
+            index = i;
         }
-        swap(&array[i], &array[min_value_index]);
         (*count)++;
+    }
+    (*count)++;
+    swap(&array[index], &array[0]);
+
+    for (i = 1; i < n; i++) {
+        element = array[i];
+        index = i - 1;
+        while (index >= 0 && array[index] > element) {
+            array[index + 1] = array[index];
+            (*count) += 2;
+            index = index - 1;
+        }
+        array[index + 1] = element;
     }
 }
 
@@ -36,10 +44,11 @@ void print_array(int array[], const int n) // print array to std output; array, 
 }
 
 
-void fill_array(int array[], const int n)
-{
+void fill_array(int array[], const int n) {
+    int maxvalue = 10000;
+    int maxvalue2 = maxvalue*2;
     for (int i = 0; i < n; i++) {
-        array[i] = rand() % 2000 - 1000;
+        array[i] = rand() % maxvalue2 - maxvalue;
     }
 }
 

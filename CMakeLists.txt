@@ -7,7 +7,12 @@ add_executable(CLionProject
 #        practice/p2-structures.c
 #        practice/p4.c
 #        practice/p4-v2.c
-        practice/p5.c
+#        practice/p5.c
+#        lab/lab2-2.c
+#        lab/lab1.c
+        lab/lab3-1.c
+#        lab/lab3-2.c
+
         )
 
 target_link_libraries(CLionProject m)

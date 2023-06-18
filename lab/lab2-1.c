@@ -49,6 +49,7 @@ void fill_array(int array[], const int n)
 int main() {
     int count = 0;
     int n;
+    printf("Введите размерность массива: ");
     int check = scanf("%d", &n);
     if (!check || n <= 0) {
         printf("Input error\n");
