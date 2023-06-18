@@ -39,7 +39,6 @@ double method_kasatelnih(double x0, double epsilon, int equation) {
 
     printf("Корень: %.5lf, найденный за %d итераций", x, iter);
 
-
     return x;
 }
 
@@ -51,7 +50,7 @@ void check_input(int a, int b) {
 }
 
 int main() {
-    system("chcp 65001");
+//    system("chcp 65001");
     double x0;
     double epsilon;
     int eq;
