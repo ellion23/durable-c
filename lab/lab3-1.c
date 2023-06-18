@@ -34,9 +34,9 @@ void insertion_sort(int array[], int n, int *count) {
     for (i = 2; i < n; i++) {
         element = array[i];
         index = i - 1;
-        while (index >= 0 && array[index] > element) {
+        while (array[index] > element) {
             array[index + 1] = array[index];
-            (*count) += 2;
+            (*count)++;
             index = index - 1;
         }
         array[index + 1] = element;

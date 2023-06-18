@@ -10,7 +10,7 @@ add_executable(CLionProject
 #        practice/p5.c
 #        lab/lab2-2.c
 #        lab/lab1.c
-        lab/lab3-1.c
+#        lab/lab3-1.c
 #        lab/lab3-2.c
 
         )

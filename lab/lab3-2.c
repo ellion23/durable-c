@@ -24,12 +24,12 @@ void insertion_sort(int array[], int n, int *count) {
     (*count)++;
     swap(&array[index], &array[0]);
 
-    for (i = 1; i < n; i++) {
+    for (i = 2; i < n; i++) {
         element = array[i];
         index = i - 1;
-        while (index >= 0 && array[index] > element) {
+        while (array[index] > element) {
             array[index + 1] = array[index];
-            (*count) += 2;
+            (*count)++;
             index = index - 1;
         }
         array[index + 1] = element;
@@ -46,24 +46,31 @@ void print_array(int array[], const int n) // print array to std output; array, 
 
 void fill_array(int array[], const int n) {
     int maxvalue = 10000;
-    int maxvalue2 = maxvalue*2;
+    int maxvalue2 = maxvalue * 2;
     for (int i = 0; i < n; i++) {
         array[i] = rand() % maxvalue2 - maxvalue;
     }
 }
 
 
-int main()
-{
+int main() {
     srand(time(NULL));
     int *array;
     int count;
-    FILE *f = fopen("../lab/data.csv", "w");
+    int i;
+    int all;
+    FILE *f = fopen("../lab/data2.csv", "w");
     for (int n = 100; n <= 10000; n += 100) {
-        count = 0;
-        array = malloc(n * sizeof(int));
-        fill_array(array, n);
-        selection_sort(array, n, &count);
+        all = 0;
+        for (i = 0; i < 40; i++) {
+            count = 0;
+            array = malloc(n * sizeof(int));
+            fill_array(array, n);
+            insertion_sort(array, n, &count);
+            free(array);
+            all += count;
+        }
+        count = all / i;
         fprintf(f, "%d; %d\n", n, count);
     }
 
