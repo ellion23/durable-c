@@ -12,27 +12,26 @@ void swap(int *a, int *b) // example of function call: swap(&x, &y);
 }
 
 
-void insertion_sort(int array[], int n, int *count) {
-    int element, index, i;
-    index = 0;
-    for (i = 1; i < n; i++) {
-        if (array[i] < array[index]) {
-            index = i;
-        }
-        (*count)++;
-    }
-    (*count)++;
-    swap(&array[index], &array[0]);
+void comb_sort(int array[], int n, int *count) {
+    int gap = n;
+    int swaps = 1;
+    int i, j;
 
-    for (i = 2; i < n; i++) {
-        element = array[i];
-        index = i - 1;
-        while (array[index] > element) {
-            array[index + 1] = array[index];
+    while (gap > 1 || swaps) {
+        gap = (int) (gap / 1.24733);
+        if (gap < 1)
+            gap = 1;
+        (*count)++;
+        swaps = 0;
+        for (i = 0; i < n - gap; ++i) {
+            j = i + gap;
+            if (array[i] > array[j]) {
+                swap(&array[i], &array[j]);
+                (*count)++;
+                swaps = 1;
+            }
             (*count)++;
-            index = index - 1;
         }
-        array[index + 1] = element;
     }
 }
 
@@ -59,14 +58,14 @@ int main() {
     int count;
     int i;
     int all;
-    FILE *f = fopen("../lab/data2.csv", "w");
+    FILE *f = fopen("../lab/data3.csv", "w");
     for (int n = 100; n <= 10000; n += 100) {
         all = 0;
         for (i = 0; i < 40; i++) {
             count = 0;
             array = malloc(n * sizeof(int));
             fill_array(array, n);
-            insertion_sort(array, n, &count);
+            comb_sort(array, n, &count);
             free(array);
             all += count;
         }

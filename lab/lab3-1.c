@@ -69,7 +69,7 @@ int main() {
     printf("После:\n");
     insertion_sort(array, n, &count);
     print_array(array, n);
-    printf("%5d\n", count);
+    printf("%d\n", count);
 
     return 0;
 }

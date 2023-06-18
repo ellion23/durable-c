@@ -19,29 +19,29 @@ void print_array(int array[], const int n) // print array to std output; array, 
 }
 
 
-void insertion_sort(int array[], int n, int *count) {
-    int element, index, i;
-    index = 0;
-    for (i = 1; i < n; i++) {
-        if (array[i] < array[index]) {
-            index = i;
-        }
-        (*count)++;
-    }
-    (*count)++;
-    swap(&array[index], &array[0]);
+void comb_sort(int array[], int n, int *count) {
+    int gap = n;
+    int swaps = 1;
+    int i, j;
 
-    for (i = 2; i < n; i++) {
-        element = array[i];
-        index = i - 1;
-        while (array[index] > element) {
-            array[index + 1] = array[index];
+    while (gap > 1 || swaps) {
+        gap = (int) (gap / 1.24733);
+        if (gap < 1)
+            gap = 1;
+        (*count)++;
+        swaps = 0;
+        for (i = 0; i < n - gap; ++i) {
+            j = i + gap;
+            if (array[i] > array[j]) {
+                swap(&array[i], &array[j]);
+                (*count)++;
+                swaps = 1;
+            }
             (*count)++;
-            index = index - 1;
         }
-        array[index + 1] = element;
     }
 }
+
 
 void fill_array(int array[], const int n) {
     int maxvalue = 100;
@@ -67,9 +67,9 @@ int main() {
     fill_array(array, n);
     print_array(array, n);
     printf("После:\n");
-    insertion_sort(array, n, &count);
+    comb_sort(array, n, &count);
     print_array(array, n);
-    printf("%5d\n", count);
+    printf("%d\n", count);
 
     return 0;
 }
