@@ -6,7 +6,8 @@ set(CMAKE_C_STANDARD 99)
 add_executable(CLionProject
 #        practice/p2-structures.c
 #        practice/p4.c
-        practice/p4-v2.c
+#        practice/p4-v2.c
+        practice/p5.c
         )
 
 target_link_libraries(CLionProject m)
