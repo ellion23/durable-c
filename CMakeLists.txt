@@ -12,7 +12,8 @@ add_executable(CLionProject
 #        lab/lab1.c
 #        lab/lab3-1.c
 #        lab/lab3-2.c
-
+        lab/lab4-1.c
+#        lab/lab4-2.c
         )
 
 target_link_libraries(CLionProject m)
