@@ -89,21 +89,13 @@ int main() {
     int *array;
     int count;
     int i;
-    int all;
     FILE *f = fopen("../lab/data4.csv", "w");
-    for (int n = 100; n <= 100; n += 100) {
-        all = 0;
-        for (i = 0; i < 40; i++) {
-            count = 0;
-            array = malloc(n * sizeof(int));
-            fill_array(array, n);
-            merge(array, n, &count);
-            free(array);
-            printf("%d\n", count);
-            all += count;
-        }
-        count = all / i;
-        printf("%d\n", count);
+    for (int n = 100; n <= 10000; n += 100) {
+        count = 0;
+        array = malloc(n * sizeof(int));
+        fill_array(array, n);
+        merge(array, n, &count);
+        free(array);
         fprintf(f, "%d; %d\n", n, count);
     }
 
