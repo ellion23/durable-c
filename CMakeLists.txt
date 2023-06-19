@@ -14,15 +14,15 @@ add_executable(CLionProject
 #        lab/lab3-2.c
 #        lab/lab4-1.c
 #        lab/lab4-2.c
-#        lab/lab5-1.c
+        lab/lab5-1.c
 #        lab/lab5-2.c
-        lab/lab6-1.c
+#        lab/lab6-1.c
 #        lab/lab6-2.c
-        Trash/temporar.c)
+        )
 
 target_link_libraries(CLionProject m)
-add_custom_command(TARGET CLionProject PRE_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy
-        ${CMAKE_SOURCE_DIR}
+#add_custom_command(TARGET CLionProject PRE_BUILD
+#        COMMAND ${CMAKE_COMMAND} -E copy
+#        ${CMAKE_SOURCE_DIR}
 #        practice/p2.txt
-        $<TARGET_FILE_DIR:CLionProject>)
+#        $<TARGET_FILE_DIR:CLionProject>)
