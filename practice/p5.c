@@ -19,7 +19,7 @@ int main() {
     nech_sum = 0;
 
     temp = strtok(line, " ");
-    printf("Введённые числа: ");
+    printf("Считанные числа: ");
     while (temp != NULL) {
         int number = atoi(temp);
         count++;
