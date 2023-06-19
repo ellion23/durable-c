@@ -8,8 +8,9 @@
 int main() {
     FILE *fp;
     fp = fopen("../practice/p5.txt", "r");
-    char line[100];
-    fgets(line, 100, fp);
+    int line_length = 100;
+    char line[line_length];
+    fgets(line, line_length, fp);
     char *temp;
     int count = 0;
 

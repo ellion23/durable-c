@@ -20,18 +20,18 @@ void print_array(int array[], const int n) // print array to std output; array, 
 
 
 void comb_sort(int array[], int n, int *count) {
-    int gap = n;
+    int step = n;
     int swaps = 1;
     int i, j;
 
-    while (gap > 1 || swaps) {
-        gap = (int) (gap / 1.24733);
-        if (gap < 1)
-            gap = 1;
+    while (step > 1 || swaps) {
+        step = (int) (step / 1.24733);
+        if (step < 1)
+            step = 1;
         (*count)++;
         swaps = 0;
-        for (i = 0; i < n - gap; ++i) {
-            j = i + gap;
+        for (i = 0; i < n - step; ++i) {
+            j = i + step;
             if (array[i] > array[j]) {
                 swap(&array[i], &array[j]);
                 (*count)++;
