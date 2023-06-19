@@ -14,8 +14,8 @@ add_executable(CLionProject
 #        lab/lab3-2.c
 #        lab/lab4-1.c
 #        lab/lab4-2.c
-        lab/lab5-1.c
-#        lab/lab5-2.c
+#        lab/lab5-1.c
+        lab/lab5-2.c
 #        lab/lab6-1.c
 #        lab/lab6-2.c
         )

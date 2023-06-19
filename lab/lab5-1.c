@@ -38,16 +38,20 @@ void merge(int array[], int n, int *count) {
                 // меньшим из двух просматриваемых
                 if (array[i] < array[j]) {
                     c[k] = array[i];
+                    (*count)++;
                     i++;
                     k++;
                 } else {
                     c[k] = array[j];
+                    (*count)++;
                     j++;
                     k++;
                 }
+                (*count)++;
             }
             while (i < step) { // переписываем оставшиеся элементы первого пути (если второй кончился раньше)
                 c[k] = array[i];
+                (*count)++;
                 i++;
                 k++;
             }
